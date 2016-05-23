@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+   <style>
+/* Background color of the day having datetype":"menstruation" */
+.calendarTable td.menstruation
+{
+ background-color: #99ccff;
+}
+/* Background color of the day having datetype":"folic" */
+ .folic
+{
+ background-color: #ffcccc;
+ }
+ 
+/* Position of div having icon 'appointment'  */
+div.appointment{
+    top: 15px;
+    right: 2px;
+}
+/* Icon URL for img 'appointment' */ 
+img.appointment{
+content:url("appointment.png");
+}
+
+div.notes{
+    top: 35px;
+    right: 2px;
+}
+img.notes{
+content:url("notes.png");
+}
+
+
+/* Position and color of event  "eventtype":"reminder" */
+div.reminderevent{
+	border:1px solid #ccc;
+	background-color: #ff0000;
+	top: 70px;
+    
+}
+
+
+div.appointmentevent{
+	border:1px solid #ccc;
+	background-color: #00ff00;
+	top: 80px;
+}
+
+.calendarTable td.size {
+	height: 70px;
+	width: 70px;
+}
+</style> 
+	<link href="css/calendar.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/calendar.js"></script>
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  
+
+  
+  <script>
+  var jsonData=null;
+  var currentDate;
+
+  $( document ).ready(function(){
+  
+  $.ajax({
+  url: "http://localhost:8080/json/jan-2016",
+  dataType: 'json',
+  async: false,
+  success: function(data) {
+   jsonData=data;
+   
+   $(".calendar").createCalendar(jsonData);
+  },
+  error:function(data){
+  alert("Error Occured in ajax call : " +data.statusText);
+  console.log(data.statusText)
+  }
+});
+
+
+ //$(".calendar").createCalendar(jsonData);
+
+
+});
+	
+	
+
+function beforePrev(){
+
+$.ajax({
+  url: "http://localhost:8080/json/dec-2015",
+  dataType: 'json',
+  async: false,
+  success: function(data) {
+   jsonData=data;
+  }
+});
+}
+
+
+function beforeNext(){
+$.ajax({
+  url: "http://localhost:8080/json/feb-2016",
+  dataType: 'json',
+  async: false,
+  success: function(data) {
+   jsonData=data;
+  }
+});
+}
+
+	
+	
+  </script>
+  <body>
+
+
+<!-- Define the class where you want to display the calendar -->
+<div class="calendar">
+</div>
+
+   
+  </body>
+</html>

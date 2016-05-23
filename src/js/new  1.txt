@@ -1,0 +1,20 @@
+{  
+   "jsondata":[  
+      {  
+         "date":"27-12-2015",
+         
+         
+         "events":[  
+            {  
+               "eventtype":"reminder",
+               "eventtext":"reminder text"
+            },
+            {  
+               "eventtype":"appointment",
+               "eventtext":"reminder text"
+            }
+         ]
+      }
+	  
+   ]
+}

@@ -1,0 +1,107 @@
+body {
+	font-family: 'Lato', sans-serif !important;
+}
+
+.fullcalendar {
+	position: relative;
+	width: 100%
+}
+
+.calendarTable {
+	margin: 5px;
+}
+
+.calendarTable tr td {
+	height: 100px;
+	width: 100px;
+	border: 0px solid #ccc;
+    padding:1px;
+}
+.event:hover{
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #ffffff;
+}
+.event:active{
+	border-top: 2px solid #cccccc;
+	border-bottom: 2px solid #ffffff;
+}
+
+.event:hover .calendarTable{
+box-shadow:none;
+	
+}
+.calendarTable tr td :hover{
+	box-shadow: 0 0 10px #ccc inset;
+	cursor:pointer;
+}
+
+
+.calendarTable tr td :active{
+	box-shadow: 0 0 20px #ccc inset;
+	cursor:pointer;
+	
+}
+
+
+
+
+
+
+
+.calendarTable td.nav {
+	height: 10px;
+	padding-bottom:5px;
+	border: 0px solid #ccc;
+}
+
+.fadeDay {
+	opacity: 0.6;
+	filter: alpha(opacity = 40); /* For IE8 and earlier */
+}
+
+.todaysDate{
+    background-color: yellow;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    width: 15px;
+    height: 20px;
+    text-align: center;
+	    font-weight: bold;
+
+}
+
+.calendarTable tr td.day {
+	height: 12px !important;
+	width: 100px;
+	text-align: center;
+	border: 0px solid #ccc;
+	padding-top:10px;
+	font-weight:bold;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.event {
+	position: absolute;
+	width: 100%;
+	height: 10px;
+}
+
+.dateDiv {
+	width: 100%;
+	height: 100%;
+	position: relative;
+		background-color:#FBFBFB;
+		border:1px solid #E2E2E2;
+}
+
+.dayDiv {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	
+	
+	
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+   <style>
+/* Background color of the day having datetype":"menstruation" */
+.calendarTable div.menstruation
+{
+ background-color: #99ccff;
+}
+/* Background color of the day having datetype":"folic" */
+ .folic
+{
+ background-color: #ffcccc;
+ }
+ 
+/* Position of div having icon 'appointment'  */
+div.appointment{
+    top: 15px;
+    right: 2px;
+}
+/* Icon URL for img 'appointment' */ 
+img.appointment{
+content:url("appointment.png");
+}
+
+div.notes{
+    top: 35px;
+    right: 2px;
+}
+img.notes{
+content:url("notes.png");
+}
+
+
+/* Position and color of event  "eventtype":"reminder" */
+div.reminderevent{
+	border:1px solid #ccc;
+	background-color: #ff0000;
+	top: 70px;
+    
+}
+
+
+div.appointmentevent{
+	border:1px solid #ccc;
+	background-color: #00ff00;
+	top: 80px;
+}
+</style> 
+	<link href="css/calendar.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/calendar.js"></script>
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  </head>
+  
+
+  
+  <script>
+  var jsonData=null;
+  var currentDate=null;
+
+  $( document ).ready(function(){
+      var jsonDataString='{     "jsondata":[        {           "date":"05-01-2016",                           "events":[              {                 "eventtype":"reminder",              "eventtext":"Visit Doctor at 3:00 PM"            },            {                 "eventtype":"appointment",               "eventtext":"reminder text"            }         ]      }	     ]}';
+	  jsonData = jQuery.parseJSON(jsonDataString)
+	  $(".calendar").createCalendar(jsonData,currentDate);
+  });
+	
+	
+
+function beforePrev(currentDate){
+
+var jsonDataString='{     "jsondata":[        {           "date":"01-12-2015",         "datetype":"menstruation",         "iconslist":"menstruation,notes",         "events":[              {                "eventtype":"reminder",               "eventtext":"reminder text"            },            {                 "eventtype":"appointment",               "eventtext":"reminder text"            }         ]      },      {           "date":"05-12-2015",         "datetype":"menstruation",         "iconslist":"menstruation,notes",         "events":[              {                 "eventtype":"reminder",               "eventtext":"reminder text"            },            {                 "eventtype":"appointment",               "eventtext":"reminder text"            }         ]     }   ]}';
+jsonData = jQuery.parseJSON(jsonDataString)
+}
+
+
+function beforeNext(){
+var jsonDataString='{     "jsondata":[        {           "date":"05-02-2016",         "datetype":"menstruation",         "iconslist":"menstruation,notes",         "events":[              {                "eventtype":"reminder",               "eventtext":"reminder text"            },            {                 "eventtype":"appointment",               "eventtext":"reminder text"            }         ]      },      {           "date":"08-02-2016",         "datetype":"menstruation",         "iconslist":"menstruation,notes",         "events":[              {                 "eventtype":"reminder",               "eventtext":"reminder text"            },            {                 "eventtype":"appointment",               "eventtext":"reminder text"            }         ]     }   ]}';
+jsonData = jQuery.parseJSON(jsonDataString)
+}
+
+
+function dayClickedEvent(dayClicked){
+alert('day clicked : ' + dayClicked)
+}	
+
+function eventClickedEvent(dayClicked){
+alert('event clicked : ' + dayClicked)
+}		
+  </script>
+  <body>
+
+
+<!-- Define the class where you want to display the calendar -->
+
+<h1><b>Please navigate to January 2016</b></h1>
+
+
+<div class="calendar">
+</div>
+
+   
+  </body>
+</html>

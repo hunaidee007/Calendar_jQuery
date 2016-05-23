@@ -1,0 +1,24 @@
+{  
+   "jsondata":[  
+      {  
+         "name":"27-12-2015",
+         age:20,
+         address:"menstruation,notes",
+      },
+      {  
+         "date":"28-12-2015",
+         "datetype":"menstruation",
+         "iconslist":"menstruation,notes",
+         "events":[  
+            {  
+               "eventtype":"reminder",
+               "eventtext":"reminder text"
+            },
+            {  
+               "eventtype":"appointment",
+               "eventtext":"reminder text"
+            }
+         ]
+      }
+   ]
+}

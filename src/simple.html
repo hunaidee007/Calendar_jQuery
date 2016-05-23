@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<link href="css/calendar.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/calendar.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+	
+  </head>
+  <script>
+  var jsonData=null;
+  var currentDate='06-03-2016';
+  $( document ).ready(function(){
+	// call createCalendar with null data. This will create a empty calendar with only dates.
+	$(".calendar").createCalendar(jsonData,currentDate);
+});
+
+  </script>
+<body>
+	<!-- Define the class where you want to display the calendar -->
+	<div class="calendar"></div>
+	
+	
+</body>
+
+
+</html>

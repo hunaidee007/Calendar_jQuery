@@ -125,7 +125,7 @@ function createCalendar(currentDate, jsonData) {
 
 	}
 
-	tableElement = tableElement + '</table></div>';
+	tableElement = tableElement + '</table> <a style="color:white" href="#">www.java-redefined.com</a></div>';
 
 	// Add created table to main div
 	$(".calendar").append(tableElement);
